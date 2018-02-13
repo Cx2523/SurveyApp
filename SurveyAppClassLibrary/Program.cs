@@ -15,6 +15,13 @@ namespace SurveyAppClassLibrary
             {
                 context.Users.Add(new User()
                 {
+                    Username = "TestUser1",
+                    Email = "test@test.com",
+                    CreationDate = DateTime.Today,
+                });
+
+                context.Questions.Add(new Question()
+                {
 
                 });
             }
