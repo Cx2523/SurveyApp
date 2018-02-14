@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SurveyAppClassLibrary;
+using SurveyAppClassLibrary.Models;
 
 namespace SurveyApp.Controllers
 {
@@ -10,6 +12,17 @@ namespace SurveyApp.Controllers
     {
         public ActionResult Index()
         {
+            using (Context context = new Context())
+            {
+                context.Users.Add(new User()
+                {
+                    Username = "TestUser1",
+                    Email = "test@test.com",
+                    CreationDate = DateTime.Today
+                });
+
+                context.SaveChanges();
+            }
             return View();
         }
 

@@ -1,12 +1,7 @@
 ﻿using SurveyAppClassLibrary.Models;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SurveyAppClassLibrary
+namespace SurveyAppClassLibrary.Data
 {
     public class Context : DbContext
     {
