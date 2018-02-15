@@ -12,14 +12,15 @@ namespace SurveyConsoleApp
     {
         static void Main(string[] args)
         {
-            Context _context = new Context();
-
-            _context.Users.Add(new User()
+            using (var _context = new Context())
             {
-                Username = "testuser1",
-                Email = "test@test.com",
-                CreationDate = DateTime.Today
-            });
+                _context.Users.Add(new User()
+                {
+                    Username = "testuser1",
+                    Email = "test@test.com",
+                    CreationDate = DateTime.Today
+                });
+            };
 
             Console.WriteLine("Test");
             Console.ReadLine();
