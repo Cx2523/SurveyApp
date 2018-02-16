@@ -10,8 +10,9 @@ namespace SurveyAppClassLibrary.Models
     public class Question
     {
         public int Id { get; set; }
-        User Creator { get; set; }
-        DateTime CreationDate { get; set; }
-        string QuestionText { get; set; }
+        public User Creator { get; set; }
+        public DateTime CreationDate { get; set; }
+        public string QuestionText { get; set; }
+        public Survey Survey { get; set; }
     }
 }
