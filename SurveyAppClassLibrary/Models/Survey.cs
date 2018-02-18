@@ -12,12 +12,13 @@ namespace SurveyAppClassLibrary.Models
         public Survey()
         {
             Questions = new List<Question>();
+            Clients = new List<Client>();
         }
 
         public int Id { get; set; }
         public User Creator { get; set; }
         public DateTime CreationDate { get; set; }
         public ICollection<Question> Questions { get; set; }
-
+        public ICollection<Client> Clients { get; set; }
     }
 }
