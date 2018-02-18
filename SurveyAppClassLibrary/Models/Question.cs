@@ -9,10 +9,14 @@ namespace SurveyAppClassLibrary.Models
 {
     public class Question
     {
+        public Question()
+        {
+            Surveys = new List<Survey> { };
+        }
         public int Id { get; set; }
         public User Creator { get; set; }
         public DateTime CreationDate { get; set; }
         public string QuestionText { get; set; }
-        public Survey Survey { get; set; }
+        public ICollection<Survey> Surveys { get; set; }
     }
 }

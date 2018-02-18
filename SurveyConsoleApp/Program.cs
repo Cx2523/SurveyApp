@@ -32,15 +32,13 @@ namespace SurveyConsoleApp
                 {
                     Creator = TestUser1,
                     CreationDate = DateTime.Today,
-                    QuestionText = "How are you feeling today?",
-                    Survey = Survey1
+                    QuestionText = "How are you feeling today?"
                 };
                 Question Q2 = new Question()
                 {
                     Creator = TestUser1,
                     CreationDate = DateTime.Today,
-                    QuestionText = "How would you rate our product?",
-                    Survey = Survey1
+                    QuestionText = "How would you rate our product?"
                 };
 
                 

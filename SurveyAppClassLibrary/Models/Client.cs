@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,5 +19,6 @@ namespace SurveyAppClassLibrary.Models
         public string Email { get; set; }
         public string ZipCode { get; set; }
         public ICollection<Survey> Surveys { get; set; }
+        public User Owner { get; set; }
     }
 }

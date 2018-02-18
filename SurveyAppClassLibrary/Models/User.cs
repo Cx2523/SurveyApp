@@ -13,6 +13,7 @@ namespace SurveyAppClassLibrary.Models
         {
             Questions = new List<Question> { };
             Surveys = new List<Survey> { };
+            Clients = new List<Client> { };
         }
         public int Id { get; set; }
         public string Username { get; set; }
@@ -20,5 +21,6 @@ namespace SurveyAppClassLibrary.Models
         public DateTime CreationDate { get; set; }
         public ICollection<Question> Questions { get; set; }
         public ICollection<Survey> Surveys {get; set;}
+        public ICollection<Client> Clients { get; set; }
     }
 }
