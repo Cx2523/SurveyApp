@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Data\DatabaseInitializer.cs" />
     <Compile Include="Data\Context.cs" />
+    <Compile Include="Data\Repository.cs" />
     <Compile Include="Data\SeedData.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Question.cs" />

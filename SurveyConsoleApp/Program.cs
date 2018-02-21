@@ -11,7 +11,8 @@ namespace SurveyConsoleApp
     {
         static void Main(string[] args)
         {
-            var DB = new DatabaseInitializer();
+            var Repo = new Repository();
+            var _context = Repo.GetContext();
             Console.WriteLine("Test");
             Console.ReadLine();
         }

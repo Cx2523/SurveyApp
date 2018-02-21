@@ -5,14 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using SurveyAppClassLibrary.Models;
+using System.Diagnostics;
 
 namespace SurveyAppClassLibrary.Data
 {
-    public class DatabaseInitializer : DropCreateDatabaseIfModelChanges<Context>
+    public class DatabaseInitializer : DropCreateDatabaseAlways<Context>
     {
-        public DatabaseInitializer()
+        public void SeedDatabase(Context context)
         {
-            SeedData.Seed1(new Context());
+            SeedData.Seed1(context);
         }
     }
 }

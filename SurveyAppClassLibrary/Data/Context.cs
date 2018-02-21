@@ -9,5 +9,11 @@ namespace SurveyAppClassLibrary.Data
         public DbSet<Question> Questions { get; set; }
         public DbSet<Survey> Surveys { get; set; }
         public DbSet<Client> Clients { get; set; }
+
+        public Context()
+        {
+            var db = new DatabaseInitializer();
+            db.SeedDatabase(this);
+        }
     }
 }
