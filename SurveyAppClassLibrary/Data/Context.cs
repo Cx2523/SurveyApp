@@ -12,8 +12,11 @@ namespace SurveyAppClassLibrary.Data
 
         public Context()
         {
-            var db = new DevDatabaseInitializer();
-            db.SeedDatabase(this);
+            if (!this.Database.Exists())
+            {
+                var db = new DevDatabaseInitializer();
+                db.SeedDatabase(this);
+            }          
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace SurveyAppClassLibrary.Data
 {
-    public class DevDatabaseInitializer : DropCreateDatabaseAlways<Context>
+    public class DevDatabaseInitializer : DropCreateDatabaseIfModelChanges<Context>
     {
         public void SeedDatabase(Context context)
         {
