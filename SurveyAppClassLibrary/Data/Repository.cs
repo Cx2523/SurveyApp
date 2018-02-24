@@ -29,5 +29,22 @@ namespace SurveyAppClassLibrary.Data
                     .ToList();
             }
         }
+
+        public User GetUserById(int id)
+        {
+            using (Context context = GetContext())
+            {
+                return context.Users.Find(id);
+            }
+        }
+
+        public void AddUser(User user)
+        {
+            using (Context context = GetContext())
+            {
+                context.Users.Add(user);
+                context.SaveChanges();
+            }
+        }
     }
 }
