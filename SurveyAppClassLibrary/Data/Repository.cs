@@ -30,6 +30,16 @@ namespace SurveyAppClassLibrary.Data
             }
         }
 
+        User CreateUserObj(string Username, string Email) {
+            User user = new User()
+            {
+                Username = Username,
+                Email = Email
+            };
+            return user;
+        }
+
+
         public User GetUserById(int id)
         {
             using (Context context = GetContext())
@@ -38,13 +48,19 @@ namespace SurveyAppClassLibrary.Data
             }
         }
 
-        public void AddUser(User user)
+        public void AddUser(string Username, string Email)
         {
+            User user = CreateUserObj(Username, Email);
             using (Context context = GetContext())
             {
                 context.Users.Add(user);
                 context.SaveChanges();
             }
+        }
+
+        public void UpdateUser(User user)
+        {
+
         }
     }
 }

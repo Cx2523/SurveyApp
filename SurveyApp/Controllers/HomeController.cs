@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SurveyAppClassLibrary;
 using SurveyAppClassLibrary.Models;
+using SurveyAppClassLibrary.Data;
 
 namespace SurveyApp.Controllers
 {
@@ -27,6 +27,14 @@ namespace SurveyApp.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [HttpPost]
+        public void UserForm(FormCollection values)
+        {
+            Repository Repo = new Repository();
+            Repo.AddUser(values["Username"], values["Email"]);
+            
         }
     }
 }

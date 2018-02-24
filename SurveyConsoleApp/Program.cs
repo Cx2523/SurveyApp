@@ -35,14 +35,13 @@ namespace SurveyConsoleApp
                 var queriedUser = Repo.GetUserById(intSelection);
                 Console.WriteLine("UserName: {0}", queriedUser.Username);
 
-                User newUser = new User() { };
                 Console.WriteLine("\nCreate new user:");
                 Console.Write("Username: ");
-                newUser.Username = Console.ReadLine();
+                string UserName = Console.ReadLine();
                 Console.Write("Email: ");
-                newUser.Email = Console.ReadLine();
+                string Email = Console.ReadLine();
 
-                Repo.AddUser(newUser);
+                Repo.AddUser(UserName, Email);
 
                 Console.Write("\nType \'quit\' to quit or any enter to continue: ");
                 status = Console.ReadLine();

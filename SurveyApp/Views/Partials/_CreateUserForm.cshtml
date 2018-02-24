@@ -1,0 +1,18 @@
+﻿@model  SurveyAppClassLibrary.Models.User
+
+@using (Html.BeginForm("UserForm", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input name="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+        @*@Html.TextBox("Email", null, new { @class = "form-control" } )*@
+
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input name="Username" type="text" class="form-control" id="exampleInputPassword1" placeholder="Username">
+    </div>
+    <button type="submit">Submit</button>
+}
