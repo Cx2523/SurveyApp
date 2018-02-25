@@ -2,38 +2,44 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron" id="jumbotronBackground">
+<div class="jumbotron">
     <h1>SURVEY APP</h1>
-    <p class="lead">SURVEY APP is a free, lightweight survey creator and analytics app. SURVEY APP keeps you in touch in with your client experience trends and rapidly respond to changing sentiments.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <p class="lead">SURVEY APP is a free, lightweight survey creator and analytics app. SURVEY APP allows you to take the pulse of your client experience and rapidly respond to changing trends.</p>
+    @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
 </div>
 
-<div class="row">
+
+<div class="row" id="sectionBackground">
     <div class="col-md-4">
-        <h2>Get Started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <div class="panel">
+            <h2>Get Started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
     </div>
     <div class="col-md-4">
-        <h2>Features</h2>
-        <p></p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <div class="panel">
+            <h2>Features</h2>
+            <p></p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
     </div>
     <div class="col-md-4">
-        <h2>Contact</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <div class="panel">
+            <h2>Contact</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            @Html.Partial("~/Views/Partials/_CreateUserForm.cshtml")
+        </div>
     </div>
 
-    <div id="reactMount"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
-        
+    @*<div id="reactMount"></div>*@
 </div>
 
-@Html.Partial("~/Views/Partials/_CreateUserForm.cshtml")
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>

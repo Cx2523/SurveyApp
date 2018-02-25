@@ -1,11 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url("img/Small_maxpixel.freegreatpicture.com-Matrix-Virus-Networking-Network-Data-Exchange-1013612.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: white;
-    background-position: center;
+    
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -28,7 +25,19 @@ textarea {
     max-width: 280px;
 }
 
-#jumbotronBackground {
-    background-color:transparent;
-    text-align:center;  
+#sectionBackground {
+    background-color: white;
+    background-image: url("img/Small_maxpixel.freegreatpicture.com-Matrix-Virus-Networking-Network-Data-Exchange-1013612.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+    background-position: center;
+    /*background-image: url('img/Matrix-Virus-Networking-Network-Data-Exchange-1013612.jpg');*/
+}
+.panel {
+    margin: 1%;
+    opacity: .9;
+    box-shadow:3px 3px 10px 1px black !important; 
+    border-radius:5px !important;
+    padding:2%;
 }
