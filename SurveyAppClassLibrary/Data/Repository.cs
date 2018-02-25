@@ -10,7 +10,7 @@ using System.Data.Entity;
 namespace SurveyAppClassLibrary.Data
 {
     public class Repository
-    {
+    { 
         public Context GetContext()
         {
             Context context = new Context();

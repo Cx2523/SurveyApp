@@ -1,6 +1,11 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("img/Small_maxpixel.freegreatpicture.com-Matrix-Virus-Networking-Network-Data-Exchange-1013612.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+    background-position: center;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +26,9 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#jumbotronBackground {
+    background-color:transparent;
+    text-align:center;  
 }
