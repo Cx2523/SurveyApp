@@ -36,5 +36,12 @@ namespace SurveyApp.Controllers
             Repo.AddUser(values["Username"], values["Email"]);
             
         }
+        public ActionResult LoginForm()
+        {
+            Repository Repo = new Repository();
+            User user = Repo.GetUserByUsername(this.Request.QueryString["Username"]);
+
+            return RedirectToAction("Index", "User", new { id = user.Id });
+        }
     }
 }

@@ -1,9 +1,9 @@
 ﻿@model  SurveyAppClassLibrary.Models.User
 
-@using (Html.BeginForm("UserForm", "Home", FormMethod.Post))
+@using (Html.BeginForm("LoginForm", "Home", FormMethod.Get))
 {
     <div class="form-group">
-        <h2>New User</h2>
+        <h2>Login</h2>
         <label for="exampleInputEmail1">Email address</label>
         <input name="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 

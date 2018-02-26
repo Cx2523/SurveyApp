@@ -48,6 +48,19 @@ namespace SurveyAppClassLibrary.Data
             }
         }
 
+        public User GetUserByUsername(string username)
+        {
+            using (Context context = GetContext())
+            {
+                var userQuery = 
+                from U in context.Users
+                where U.Username == username
+                select U;
+                User user = userQuery.SingleOrDefault();
+                return user ;
+            }
+        }
+
         public void AddUser(string Username, string Email)
         {
             User user = CreateUserObj(Username, Email);
