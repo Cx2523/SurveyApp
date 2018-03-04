@@ -1,6 +1,4 @@
-﻿import Component2 from "./ReactComponents/Component2.jsx";
-
-class TestComponent extends React.Component {
+﻿class TestComponent extends React.Component {
     testClassMethod() {
         return 10 + 2;
     }   
@@ -14,9 +12,6 @@ class TestComponent extends React.Component {
     }
 }
 
-ReactDOM.render(
-    <div>
-        <Component2 />
-        <TestComponent />
-    </div>
-    , document.getElementById("reactMount"));
+
+
+ReactDOM.render(<TestComponent />, document.getElementById("reactNode"));
