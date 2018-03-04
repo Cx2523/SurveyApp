@@ -41,7 +41,7 @@ namespace SurveyApp.Controllers
             Repository Repo = new Repository();
             User user = Repo.GetUserByUsername(this.Request.QueryString["Username"]);
 
-            return RedirectToAction("Index", "User", new { user = user });
+            return RedirectToAction("Index", "User", new { username = user.Username });
         }
     }
 }

@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SurveyAppClassLibrary.Models;
+using SurveyAppClassLibrary.Data;
 
 namespace SurveyApp.Controllers
 {
     public class UserController : Controller
     {
-        // GET: User
-        public ActionResult Index()
+        [HttpPost]
+        public ActionResult Index(User requestedUser)
         {
+            Repository Repo = new Repository();
+            User user = Repo.GetUserByUsername(requestedUser.Username);
 
-            return View();
+            return View(user);
         }
     }
 }
