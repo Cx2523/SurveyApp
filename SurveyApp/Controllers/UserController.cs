@@ -18,5 +18,11 @@ namespace SurveyApp.Controllers
 
             return View(user);
         }
+
+        public void CreateNewClient(Client newClient)
+        {
+            Repository Repo = new Repository();
+            
+        }
     }
 }

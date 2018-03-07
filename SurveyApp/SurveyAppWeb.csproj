@@ -239,6 +239,7 @@
     <Content Include="Views\Partials\_CreateUserForm.cshtml" />
     <Content Include="Views\Partials\_LoginForm.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Partials\_NewClientForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

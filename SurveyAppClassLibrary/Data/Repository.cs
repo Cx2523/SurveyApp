@@ -75,5 +75,15 @@ namespace SurveyAppClassLibrary.Data
         {
 
         }
+
+        public void AddClient(Client client)
+        {
+            using (Context context = GetContext())
+            {
+                context.Clients.Add(client);
+                context.SaveChanges();
+            }
+        }
+
     }
 }
