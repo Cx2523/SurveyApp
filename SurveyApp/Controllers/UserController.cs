@@ -13,7 +13,7 @@ namespace SurveyApp.Controllers
         [HttpPost]
         public ActionResult Index(User requestedUser)
         {
-            Repository Repo = new Repository();
+            UserRepository Repo = new UserRepository();
             User user = Repo.GetUserByUsername(requestedUser.Username);
 
             return View(user);
@@ -21,7 +21,7 @@ namespace SurveyApp.Controllers
 
         public ActionResult CreateNewClient(Client newClient)
         {
-            Repository Repo = new Repository();
+            UserRepository Repo = new UserRepository();
             Repo.AddClient(newClient);
             return View();
         }

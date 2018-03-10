@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using SurveyAppClassLibrary.Models;
 using System.Data.Entity;
 
-namespace SurveyAppClassLibrary.Data
+namespace SurveyAppClassLibrary.Data.Repositories
 {
-    public class Repository
+    public class UserRepository : IUserRepository
     { 
         public Context GetContext()
         {
@@ -18,7 +18,7 @@ namespace SurveyAppClassLibrary.Data
             return context;
         }
 
-        public ICollection<User> GetUsers()
+        public IEnumerable<User> GetUsers()
         {
             using(Context context = GetContext())
             {
@@ -30,14 +30,14 @@ namespace SurveyAppClassLibrary.Data
             }
         }
 
-        User CreateUserObj(string Username, string Email) {
-            User user = new User()
-            {
-                Username = Username,
-                Email = Email
-            };
-            return user;
-        }
+        //User CreateUserObj(string Username, string Email) {
+        //    User user = new User()
+        //    {
+        //        Username = Username,
+        //        Email = Email
+        //    };
+        //    return user;
+        //}
 
 
         public User GetUserById(int id)
@@ -48,22 +48,21 @@ namespace SurveyAppClassLibrary.Data
             }
         }
 
-        public User GetUserByUsername(string username)
-        {
-            using (Context context = GetContext())
-            {
-                var userQuery = 
-                from U in context.Users
-                where U.Username == username
-                select U;
-                User user = userQuery.SingleOrDefault();
-                return user ;
-            }
-        }
+        //public User GetUserByUsername(string username)
+        //{
+        //    using (Context context = GetContext())
+        //    {
+        //        var userQuery = 
+        //        from U in context.Users
+        //        where U.Username == username
+        //        select U;
+        //        User user = userQuery.SingleOrDefault();
+        //        return user ;
+        //    }
+        //}
 
-        public void AddUser(string Username, string Email)
+        public void InsertUser(User user)
         {
-            User user = CreateUserObj(Username, Email);
             using (Context context = GetContext())
             {
                 context.Users.Add(user);
@@ -75,15 +74,8 @@ namespace SurveyAppClassLibrary.Data
         {
 
         }
+        public void DeleteUser(int UserId) { }
 
-        public void AddClient(Client client)
-        {
-            using (Context context = GetContext())
-            {
-                context.Clients.Add(client);
-                context.SaveChanges();
-            }
-        }
-
+        public void Save() { }
     }
 }

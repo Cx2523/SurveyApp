@@ -12,7 +12,7 @@ namespace SurveyConsoleApp
     {
         static void Main(string[] args)
         {
-            var Repo = new Repository();
+            var Repo = new UserRepository();
 
             string status = "run";
             do

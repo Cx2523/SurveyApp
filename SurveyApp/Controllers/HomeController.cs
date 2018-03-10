@@ -32,13 +32,13 @@ namespace SurveyApp.Controllers
         [HttpPost]
         public void UserForm(FormCollection values)
         {
-            Repository Repo = new Repository();
+            UserRepository Repo = new UserRepository();
             Repo.AddUser(values["Username"], values["Email"]);
             
         }
         public ActionResult LoginForm()
         {
-            Repository Repo = new Repository();
+            UserRepository Repo = new UserRepository();
             User user = Repo.GetUserByUsername(this.Request.QueryString["Username"]);
 
             return RedirectToAction("Index", "User", new { username = user.Username });
