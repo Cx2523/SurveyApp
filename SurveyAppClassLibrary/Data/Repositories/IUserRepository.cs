@@ -9,8 +9,9 @@ namespace SurveyAppClassLibrary.Data.Repositories
 {
     interface IUserRepository
     {
-        IEnumerable<User> GetUsers();
-        User GetUserById(int UserId);
+        //IEnumerable<User> GetUsers();
+        //User GetUserById(int UserId);
+        User GetUserByUsernameAndEmail(string username, string email);
         void InsertUser(User user);
         void UpdateUser(User user);
         void DeleteUser(int UserId);

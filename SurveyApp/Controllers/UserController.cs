@@ -5,25 +5,29 @@ using System.Web;
 using System.Web.Mvc;
 using SurveyAppClassLibrary.Models;
 using SurveyAppClassLibrary.Data;
+using SurveyAppClassLibrary.Data.Repositories;
 
 namespace SurveyApp.Controllers
 {
     public class UserController : Controller
     {
-        [HttpPost]
-        public ActionResult Index(User requestedUser)
+        private Context _context = null;
+        public UserController()
         {
-            UserRepository Repo = new UserRepository();
-            User user = Repo.GetUserByUsername(requestedUser.Username);
+            _context = new Context();
+        }
 
+        [HttpPost]
+        public ActionResult Index(User user)
+        {
             return View(user);
         }
 
-        public ActionResult CreateNewClient(Client newClient)
-        {
-            UserRepository Repo = new UserRepository();
-            Repo.AddClient(newClient);
-            return View();
-        }
+        //public ActionResult CreateNewClient(Client newClient)
+        //{
+        //    UserRepository Repo = new UserRepository();
+        //    Repo.AddClient(newClient);
+        //    return View();
+        //}
     }
 }

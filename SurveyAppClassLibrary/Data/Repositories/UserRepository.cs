@@ -10,70 +10,29 @@ using System.Data.Entity;
 namespace SurveyAppClassLibrary.Data.Repositories
 {
     public class UserRepository : IUserRepository
-    { 
-        public Context GetContext()
+    {
+        // the User Repository would be basically an admin layer over
+        // the standard User interface. for now it is just stubbed 
+        // except to get a specific User based on username and email.
+        private Context _context = null;
+        public UserRepository(Context context)
         {
-            Context context = new Context();
-            context.Database.Log = (message) => Debug.WriteLine(message);
-            return context;
+            _context = context; 
         }
 
-        public IEnumerable<User> GetUsers()
+        //public IEnumerable<User> GetUsers() { }
+
+        //public User GetUserById(int id) { } 
+
+        public User GetUserByUsernameAndEmail(string username, string email)
         {
-            using(Context context = GetContext())
-            {
-                return context.Users
-                    .Include(u => u.Questions)
-                    .Include(u => u.Surveys)
-                    .Include(u => u.Clients)
-                    .ToList();
-            }
+            return _context.Users.Find(username); 
         }
 
-        //User CreateUserObj(string Username, string Email) {
-        //    User user = new User()
-        //    {
-        //        Username = Username,
-        //        Email = Email
-        //    };
-        //    return user;
-        //}
+        public void InsertUser(User user) { }
 
+        public void UpdateUser(User user) { }
 
-        public User GetUserById(int id)
-        {
-            using (Context context = GetContext())
-            {
-                return context.Users.Find(id);
-            }
-        }
-
-        //public User GetUserByUsername(string username)
-        //{
-        //    using (Context context = GetContext())
-        //    {
-        //        var userQuery = 
-        //        from U in context.Users
-        //        where U.Username == username
-        //        select U;
-        //        User user = userQuery.SingleOrDefault();
-        //        return user ;
-        //    }
-        //}
-
-        public void InsertUser(User user)
-        {
-            using (Context context = GetContext())
-            {
-                context.Users.Add(user);
-                context.SaveChanges();
-            }
-        }
-
-        public void UpdateUser(User user)
-        {
-
-        }
         public void DeleteUser(int UserId) { }
 
         public void Save() { }
