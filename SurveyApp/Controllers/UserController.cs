@@ -11,23 +11,45 @@ namespace SurveyApp.Controllers
 {
     public class UserController : Controller
     {
-        private Context _context = null;
-        public UserController()
-        {
-            _context = new Context();
+        //private Context _context = null;
+
+        private int userID;
+
+        public int UserID {
+            get
+            {
+                return userID;
+            }
+            set
+            {
+                userID = value;
+            }
         }
 
-        [HttpPost]
+        //public UserController()
+        //{
+        //    _context = new Context();
+        //}
+
+        
         public ActionResult Index(User user)
         {
+            userID = user.Id;
             return View(user);
         }
 
-        //public ActionResult CreateNewClient(Client newClient)
-        //{
-        //    UserRepository Repo = new UserRepository();
-        //    Repo.AddClient(newClient);
-        //    return View();
-        //}
+        public void GetClients()
+        {
+            ClientRepository ClientRepo = new ClientRepository(_context);
+            ViewBag.Clients = ClientRepo.GetClients(UserID);
+        }
+
+        public void InsertClient(Client newClient)
+        {
+            ClientRepository ClientRepo = new ClientRepository(_context);
+            ClientRepo.InsertClient(newClient, UserID);
+            ClientRepo.Save();
+            RedirectToAction("Index");
+        }
     }
 }
