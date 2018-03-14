@@ -11,12 +11,7 @@ namespace SurveyApp.Controllers
 {
     public class HomeController : Controller
     {
-        private Context _context = null;
-
-        public HomeController()
-        {
-            _context = new Context();
-        }
+        
 
         public ActionResult Index()
         {
@@ -43,14 +38,6 @@ namespace SurveyApp.Controllers
             //UserRepository Repo = new UserRepository();
             //Repo.AddUser(values["Username"], values["Email"]);
             
-        }
-        public ActionResult LoginForm()
-        {
-            
-            UserRepository Repo = new UserRepository(_context);
-            User user = Repo.GetUserByUsernameAndEmail(this.Request.QueryString["Username"], this.Request.QueryString["Email"]);
-
-            return RedirectToAction("Index", "User", user);
         }
     }
 }

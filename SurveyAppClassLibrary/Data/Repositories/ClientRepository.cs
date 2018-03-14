@@ -17,10 +17,9 @@ namespace SurveyAppClassLibrary.Data.Repositories
             _context = context;
         }
 
-        public IEnumerable<Client> GetClients(int UserID)
+        public IEnumerable<Client> GetClients()
         {
-            var query = from c in _context.Clients where c.Owner.Id == UserID select c;
-            return query.ToList();
+            return _context.Clients.ToList();
         }
 
         public Client GetClientById(int id)

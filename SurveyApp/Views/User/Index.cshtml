@@ -20,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-        @foreach(var client in Model.Clients)
+        @foreach(var client in ViewBag.Clients)
         {
             <tr>
                 <td>@client.FirstName</td>
