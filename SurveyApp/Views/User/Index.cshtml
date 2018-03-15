@@ -7,7 +7,26 @@
 
 <section>
     <h3>Client List</h3>
-        @Html.Partial("~/Views/Partials/_NewClientForm.cshtml")
+    @using (Html.BeginForm("InsertClient", "User" ))
+    {<h2>Add a New Client</h2>
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input name="FirstName" type="text" class="form-control" id="" aria-describedby="" placeholder="First Name">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input name="LastName" type="text" class="form-control" id="" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input name="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="zip">Zip Code</label>
+            <input name="ZipCode" type="number" class="form-control" id="" placeholder="Zip">
+        </div>
+        <button type="submit">Submit</button>
+    }
     <table class="table-striped">
         <thead>
             <tr>
@@ -20,20 +39,20 @@
             </tr>
         </thead>
         <tbody>
-        @*@foreach(var client in ViewBag.Clients)
-        {
-            <tr>
-                <td>@client.FirstName</td>
-                <td>@client.LastName</td>
-                <td>@client.Email</td>
-                <td>@client.ZipCode</td>
-                <td>@client.Surveys</td>
-                <td>@client.Owner</td>
-            </tr>   
-        }*@          
+            @*@foreach(var client in ViewBag.Clients)
+                {
+                    <tr>
+                        <td>@client.FirstName</td>
+                        <td>@client.LastName</td>
+                        <td>@client.Email</td>
+                        <td>@client.ZipCode</td>
+                        <td>@client.Surveys</td>
+                        <td>@client.Owner</td>
+                    </tr>
+                }*@
         </tbody>
     </table>
-    
+
 </section>
 
 <div id="reactNode"></div>

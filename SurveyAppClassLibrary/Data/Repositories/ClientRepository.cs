@@ -19,6 +19,7 @@ namespace SurveyAppClassLibrary.Data.Repositories
 
         public IEnumerable<Client> GetClients()
         {
+
             return _context.Clients.ToList();
         }
 
