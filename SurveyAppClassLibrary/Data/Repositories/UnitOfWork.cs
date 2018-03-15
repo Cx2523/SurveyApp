@@ -24,7 +24,8 @@ namespace SurveyAppClassLibrary.Data.Repositories
         {
             get
             {
-                return this.userRepository ?? new UserRepository(_context);
+                var repo = this.userRepository ?? new UserRepository(_context);
+                return repo;
             }
         }
 

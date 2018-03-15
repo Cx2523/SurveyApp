@@ -13,10 +13,11 @@ namespace SurveyApp.Controllers
     {
 
         private UnitOfWork unitOfWork = new UnitOfWork();
+        public User user = null;
 
         public ActionResult Index()
         {
-            User user = unitOfWork.UserRepository.GetUserByUsernameAndEmail(this.Request.QueryString["Username"], this.Request.QueryString["Email"]);
+            user = unitOfWork.UserRepository.GetUserByUsernameAndEmail(this.Request.QueryString["Username"], this.Request.QueryString["Email"]);
 
             return View(user);
         }
@@ -28,7 +29,7 @@ namespace SurveyApp.Controllers
 
         public void InsertClient(Client newClient)
         {
-            
+            unitOfWork.ClientRepository.InsertClient(newClient, user.Id);
         }
     }
 }
