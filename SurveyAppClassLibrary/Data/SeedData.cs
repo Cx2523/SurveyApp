@@ -88,7 +88,7 @@ namespace SurveyAppClassLibrary.Data
                 Email = "client1@test.com",
                 ZipCode = "84101",
                 Surveys = new List<Survey>() {},
-                OwnerId = 2
+                OwnerId = TestUser2
             };
             Client Client2 = new Client()
             {
@@ -97,7 +97,7 @@ namespace SurveyAppClassLibrary.Data
                 Email = "client2@test.com",
                 ZipCode = "84101",
                 Surveys = new List<Survey>() { },
-                OwnerId = 2
+                OwnerId = TestUser2
             };
             Client Client3 = new Client()
             {
@@ -106,7 +106,7 @@ namespace SurveyAppClassLibrary.Data
                 Email = "client3@test.com",
                 ZipCode = "84101",
                 Surveys = new List<Survey>() { },
-                OwnerId = 2
+                OwnerId = TestUser2
             };
             Client Client4 = new Client()
             {
@@ -115,7 +115,7 @@ namespace SurveyAppClassLibrary.Data
                 Email = "client4@test.com",
                 ZipCode = "84101",
                 Surveys = new List<Survey>() { },
-                OwnerId = 1
+                OwnerId = TestUser1
             };
             Survey1.Clients = new List<Client>() { Client4 };
             Survey2.Clients = new List<Client>() { Client1, Client2, Client3 };

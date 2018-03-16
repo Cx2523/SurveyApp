@@ -33,9 +33,9 @@ namespace SurveyApp.Controllers
         }
 
         [HttpPost]
-        public void UserForm(FormCollection values)
+        public void UserForm(User user)
         {
-            unitOfWork.UserRepository.InsertUser(values["Username"], values["Email"]);
+            unitOfWork.UserRepository.InsertUser(user);
         }
     }
 }

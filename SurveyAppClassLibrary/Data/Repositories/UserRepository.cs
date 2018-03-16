@@ -29,9 +29,9 @@ namespace SurveyAppClassLibrary.Data.Repositories
             return _context.Users.Single(user => user.Username == username); ; 
         }
 
-        public void InsertUser(string username, string email)
+        public void InsertUser(User user)
         {
-            _context.Users.Add(username, email);
+            _context.Users.Add(user);
             _context.SaveChanges();
         }
 
