@@ -11,7 +11,7 @@ namespace SurveyApp.Controllers
 {
     public class HomeController : Controller
     {
-        
+        UnitOfWork unitOfWork = new UnitOfWork();
 
         public ActionResult Index()
         {
@@ -35,9 +35,7 @@ namespace SurveyApp.Controllers
         [HttpPost]
         public void UserForm(FormCollection values)
         {
-            //UserRepository Repo = new UserRepository();
-            //Repo.AddUser(values["Username"], values["Email"]);
-            
+            unitOfWork.UserRepository.InsertUser(values["Username"], values["Email"]);
         }
     }
 }

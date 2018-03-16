@@ -11,7 +11,7 @@ namespace SurveyAppClassLibrary.Data.Repositories
     {
         IEnumerable<Client> GetClients();
         Client GetClientById(int ClientId);
-        void InsertClient(Client Client, int UserID);
+        void InsertClient(Client Client);
         void UpdateClient(Client Client);
         void DeleteClient(int ClientId);
         void Save();

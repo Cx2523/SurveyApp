@@ -4,10 +4,10 @@
 }
 
 <h2>Welcome back @Model.Username</h2>
-
+@Model.Id
 <section>
     <h3>Client List</h3>
-    @using (Html.BeginForm("InsertClient", "User" ))
+    @using (Html.BeginForm("InsertClient", "User", FormMethod.Post))
     {<h2>Add a New Client</h2>
         <div class="form-group">
             <label for="firstname">First Name</label>
@@ -25,6 +25,7 @@
             <label for="zip">Zip Code</label>
             <input name="ZipCode" type="number" class="form-control" id="" placeholder="Zip">
         </div>
+        <input type="hidden" name="OwnerId" value=@Model.Id />
         <button type="submit">Submit</button>
     }
     <table class="table-striped">
