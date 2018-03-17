@@ -188,6 +188,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\ReactConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -241,6 +242,8 @@
     <Content Include="Views\Partials\_LoginForm.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Surveys.cshtml" />
+    <Content Include="Views\Client\_InsertClient.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

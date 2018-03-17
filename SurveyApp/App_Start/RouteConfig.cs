@@ -18,6 +18,12 @@ namespace SurveyApp
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Clients",
+                url: "{controller}/{action}/{comicbookid}/{id}",
+                defaults: new { controller = "Client", action = "Index", id = UrlParameter.Optional }
+            );
         }
     }
 }

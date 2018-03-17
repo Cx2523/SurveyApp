@@ -29,9 +29,9 @@ namespace SurveyAppClassLibrary.Data.Repositories
             return query.Single();
         }
 
-        public void InsertClient(Client client)
+        public void InsertClient(Client client, int UserId)
         {
-            //_context.Users.Find(client.Owner).Clients.Add(client);
+            _context.Users.Find(UserId).Clients.Add(client);
         }
 
         public void UpdateClient(Client client) { }

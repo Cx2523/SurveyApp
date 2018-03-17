@@ -25,10 +25,5 @@ namespace SurveyApp.Controllers
             ViewBag.Clients = unitOfWork.ClientRepository.GetClients();
         }
 
-        [HttpPost]
-        public void InsertClient(Client client)
-        {
-            unitOfWork.ClientRepository.InsertClient(client);
-        }
     }
 }

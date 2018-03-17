@@ -5,28 +5,8 @@
 
 <h2>Welcome back @Model.Username</h2>
 <section>
-    <h3>Client List</h3>
-    @using (Html.BeginForm("InsertClient", "User", FormMethod.Post))
-    {<h2>Add a New Client</h2>
-        <div class="form-group">
-            <label for="firstname">First Name</label>
-            <input name="FirstName" type="text" class="form-control" id="" aria-describedby="" placeholder="First Name">
-        </div>
-        <div class="form-group">
-            <label for="lastname">Last Name</label>
-            <input name="LastName" type="text" class="form-control" id="" placeholder="Last Name">
-        </div>
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input name="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="zip">Zip Code</label>
-            <input name="ZipCode" type="number" class="form-control" id="" placeholder="Zip">
-        </div>
-        <input type="hidden" name="OwnerId"  />
-        <button type="submit">Submit</button>
-    }
+    <h3>Clients</h3>
+    <a href="@Url.Action("Index", "Client", new { user = Model })" class="btn btn-primary btn-xs margin-right">Add</a>
     <table class="table-striped">
         <thead>
             <tr>
@@ -39,24 +19,25 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var client in Model.Clients)
-                {
-                    <tr>
-                        <td>@client.FirstName</td>
-                        <td>@client.LastName</td>
-                        <td>@client.Email</td>
-                        <td>@client.ZipCode</td>
-                        <td>@client.Surveys</td>
-                        <td>@client.Owner</td>
-                    </tr>
-                }
+            @foreach (var client in Model.Clients)
+            {
+                <tr>
+                    <td>@client.FirstName</td>
+                    <td>@client.LastName</td>
+                    <td>@client.Email</td>
+                    <td>@client.ZipCode</td>
+                    <td>@client.Surveys</td>
+                    <td>@client.Owner.Username</td>
+                    <td><button>Edit</button></td>
+                </tr>
+            }
         </tbody>
     </table>
 
 </section>
 
-<div id="reactNode"></div>
+@*<div id="reactNode"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
-<script src="@Url.Content("~/Scripts/ReactTest.jsx")"></script>
+<script src="@Url.Content("~/Scripts/ReactTest.jsx")"></script>*@
