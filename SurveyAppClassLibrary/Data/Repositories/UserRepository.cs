@@ -26,7 +26,13 @@ namespace SurveyAppClassLibrary.Data.Repositories
 
         public User GetUserByUsernameAndEmail(string username, string email)
         {
-            return _context.Users.Single(user => user.Username == username); ; 
+            
+            return _context.Users
+                .Where(user => user.Username == username)
+                .Include(user => user.Clients)
+                .Include(user => user.Questions)
+                .Include(user => user.Surveys)
+                .Single();
         }
 
         public void InsertUser(User user)

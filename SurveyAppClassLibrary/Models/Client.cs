@@ -19,6 +19,6 @@ namespace SurveyAppClassLibrary.Models
         public string Email { get; set; }
         public string ZipCode { get; set; }
         public ICollection<Survey> Surveys { get; set; }
-        public User OwnerId { get; set; }
+        public User Owner { get; set; }
     }
 }

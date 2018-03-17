@@ -31,7 +31,7 @@ namespace SurveyAppClassLibrary.Data.Repositories
 
         public void InsertClient(Client client)
         {
-            _context.Users.Find(client.OwnerId).Clients.Add(client);
+            //_context.Users.Find(client.Owner).Clients.Add(client);
         }
 
         public void UpdateClient(Client client) { }
