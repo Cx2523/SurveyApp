@@ -18,7 +18,8 @@ namespace SurveyApp.Controllers
 
         public void InsertClient(Client client)
         {
-            unitOfWork.ClientRepository.InsertClient(client, client.Owner.Id);
+            unitOfWork.ClientRepository.InsertClient(client, (int)Session["UserId"]);
+            unitOfWork.Save();
         }
     }
 }

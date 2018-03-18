@@ -17,6 +17,7 @@ namespace SurveyApp.Controllers
         {
             User user = unitOfWork.UserRepository.GetUserByUsernameAndEmail(this.Request.QueryString["Username"], this.Request.QueryString["Email"]);
 
+            Session["UserId"] = user.Id;
             return View(user);
         }
 
