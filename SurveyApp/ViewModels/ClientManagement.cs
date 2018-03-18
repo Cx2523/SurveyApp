@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using SurveyAppClassLibrary.Models;
 
-namespace SurveyAppWeb
+namespace SurveyApp.ViewModels
 {
-    public class UserViewModel
+    public class ClientManagement
     {
-        public User User { get; set; }
+        public List<Client> Clients { get; set; }
         public Client Client { get; set; }
     }
 }

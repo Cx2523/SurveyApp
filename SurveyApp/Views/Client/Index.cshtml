@@ -1,8 +1,35 @@
-﻿
+﻿@model SurveyApp.ViewModels.ClientManagement
+
 @{
     ViewBag.Title = "Clients";
 }
 
 <h2>Clients</h2>
 @Html.Partial("_InsertClient")
-
+<table class="table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Zip Code</th>
+            <th>Surveys</th>
+            <th>Representative</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model.Clients)
+        {
+            <tr>
+                <td>@client.FirstName</td>
+                <td>@client.LastName</td>
+                <td>@client.Email</td>
+                <td>@client.ZipCode</td>
+                <td>@client.Surveys</td>
+                <td>@client.Owner.Username</td>
+                <td><button>Edit</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

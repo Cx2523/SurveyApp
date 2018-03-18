@@ -5,35 +5,12 @@
 
 <h2>Welcome back @Model.Username</h2>
 <section>
-    <h3>Clients</h3>
-    <a href="@Url.Action("Index", "Client", new { user = Model })" class="btn btn-primary btn-xs margin-right">Add</a>
-    <table class="table-striped">
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Zip Code</th>
-                <th>Surveys</th>
-                <th>Representative</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var client in Model.Clients)
-            {
-                <tr>
-                    <td>@client.FirstName</td>
-                    <td>@client.LastName</td>
-                    <td>@client.Email</td>
-                    <td>@client.ZipCode</td>
-                    <td>@client.Surveys</td>
-                    <td>@client.Owner.Username</td>
-                    <td><button>Edit</button></td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
+    <a href="@Url.Action("Index", "Client")" class="btn btn-primary btn-lg margin-right">Manage Clients</a>
+    <a href="" class="btn btn-primary btn-lg margin-right">Manage Surveys</a>
+    <a href="" class="btn btn-primary btn-lg margin-right">Manage Questions</a>
+</section>
+<section>
+    DASHBOARD
 </section>
 
 @*<div id="reactNode"></div>

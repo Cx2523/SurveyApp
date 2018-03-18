@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,13 @@ namespace SurveyAppClassLibrary.Data.Repositories
             _context = context;
         }
 
-        public IEnumerable<Client> GetClients()
+        public IEnumerable<Client> GetClients(int id)
         {
-
-            return _context.Clients.ToList();
+            return _context.Clients
+                .Where(client => client.Owner.Id == id)
+                .Include(client => client.Surveys)
+                .Include(client => client.Owner)
+                .ToList();
         }
 
         public Client GetClientById(int id)

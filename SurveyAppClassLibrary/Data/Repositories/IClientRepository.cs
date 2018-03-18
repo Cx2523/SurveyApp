@@ -9,7 +9,7 @@ namespace SurveyAppClassLibrary.Data.Repositories
 {
     interface IClientRepository
     {
-        IEnumerable<Client> GetClients();
+        IEnumerable<Client> GetClients(int UserId);
         Client GetClientById(int ClientId);
         void InsertClient(Client Client, int UserId);
         void UpdateClient(Client Client);

@@ -21,10 +21,5 @@ namespace SurveyApp.Controllers
             return View(user);
         }
 
-        public void GetClients()
-        {
-            ViewBag.Clients = unitOfWork.ClientRepository.GetClients();
-        }
-
     }
 }

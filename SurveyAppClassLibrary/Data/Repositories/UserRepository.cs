@@ -28,7 +28,7 @@ namespace SurveyAppClassLibrary.Data.Repositories
         {
             
             return _context.Users
-                .Where(user => user.Username == username)
+                .Where(user => user.Username == username && user.Email == email)
                 .Include(user => user.Clients)
                 .Include(user => user.Questions)
                 .Include(user => user.Surveys)

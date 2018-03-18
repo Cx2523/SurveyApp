@@ -1,4 +1,5 @@
-﻿using SurveyAppClassLibrary.Data.Repositories;
+﻿using SurveyApp.ViewModels;
+using SurveyAppClassLibrary.Data.Repositories;
 using SurveyAppClassLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,18 @@ namespace SurveyApp.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork();
         public ActionResult Index()
         {
-            return View();
+            ClientManagement clients = new ClientManagement();
+            clients.Clients = unitOfWork.ClientRepository.GetClients((int)Session["UserId"]).ToList();
+            
+            return View(clients);
         }
 
-        public void InsertClient(Client client)
+        [HttpPost]
+        public ActionResult InsertClient(Client client)
         {
             unitOfWork.ClientRepository.InsertClient(client, (int)Session["UserId"]);
             unitOfWork.Save();
+            return RedirectToAction("Index");
         }
     }
 }
