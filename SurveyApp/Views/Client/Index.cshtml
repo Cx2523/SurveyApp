@@ -16,20 +16,23 @@
             <th>Surveys</th>
             <th>Representative</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var client in Model.Clients)
         {
-            <tr>
-                <td>@client.FirstName</td>
-                <td>@client.LastName</td>
-                <td>@client.Email</td>
-                <td>@client.ZipCode</td>
-                <td>@client.Surveys</td>
-                <td>@client.Owner.Username</td>
-                <td><button>Edit</button></td>
-            </tr>
+        <tr>
+            <td>@client.FirstName</td>
+            <td>@client.LastName</td>
+            <td>@client.Email</td>
+            <td>@client.ZipCode</td>
+            <td>@client.Surveys</td>
+            <td>@client.Owner.Username</td>
+            <td><button>Edit</button></td>
+            <td><a href="@Url.Action("DeleteClient", "Client", new { clientID = client.Id } )" class="btn btn-danger btn-lg margin-right">Delete</a></td>
+            
+        </tr>
         }
     </tbody>
 </table>

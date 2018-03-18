@@ -20,6 +20,5 @@ namespace SurveyApp.Controllers
             Session["UserId"] = user.Id;
             return View(user);
         }
-
     }
 }

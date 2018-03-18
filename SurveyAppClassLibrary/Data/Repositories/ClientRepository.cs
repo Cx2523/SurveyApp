@@ -40,7 +40,11 @@ namespace SurveyAppClassLibrary.Data.Repositories
 
         public void UpdateClient(Client client) { }
 
-        public void DeleteClient(int ClientId) { }
+        public void DeleteClient(int ClientId)
+        {
+            Client client = _context.Clients.Where(c => c.Id == ClientId).SingleOrDefault();
+            _context.Clients.Remove(client);
+        }
 
         public void Save()
         {

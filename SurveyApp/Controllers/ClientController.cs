@@ -27,5 +27,14 @@ namespace SurveyApp.Controllers
             unitOfWork.Save();
             return RedirectToAction("Index");
         }
+
+        public ActionResult DeleteClient()
+        {
+            unitOfWork.ClientRepository.DeleteClient(
+                Int32.Parse(Request.QueryString["clientID"])
+                );
+            unitOfWork.Save();
+            return RedirectToAction("Index");
+        }
     }
 }
