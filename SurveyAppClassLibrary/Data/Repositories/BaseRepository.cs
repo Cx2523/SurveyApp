@@ -16,9 +16,9 @@ namespace SurveyAppClassLibrary.Data.Repositories
             Context = context;
         }
         //get all in DB set
-        public abstract TEntity GetList(int id);
+        public abstract TEntity Get(int id);
         //Get(id) in DB set
-        public abstract IList<TEntity> Get();
+        public abstract IList<TEntity> GetList();
         //INsert(entity)
         public void Insert(TEntity entity)
         {

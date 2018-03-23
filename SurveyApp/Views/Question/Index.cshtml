@@ -1,0 +1,31 @@
+﻿@model SurveyApp.ViewModels.QuestionManagement
+@{
+    ViewBag.Title = "Questions";
+}
+
+<h2>Questions</h2>
+@*@Html.Partial("_InsertClient")*@
+<table class="table-striped">
+    <thead>
+        <tr>
+            <th>Creator</th>
+            <th>Creation Date</th>
+            <th>Question Text</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var question in Model.Questions)
+        {
+            <tr>
+                <td>@question.Creator</td>
+                <td>@question.CreationDate</td>
+                <td>@question.QuestionText</td>
+                <td><a href="" class="btn btn-warning btn-md margin-right">Edit</a></td>
+                <td>@*<a href="@Url.Action("DeleteClient", "Client", new { clientID = client.Id } )" class="btn btn-danger btn-md margin-right">Delete</a>*@</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
