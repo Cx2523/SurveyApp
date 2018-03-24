@@ -247,6 +247,7 @@
     <Content Include="Views\Client\_InsertClient.cshtml" />
     <Content Include="Views\Client\Index.cshtml" />
     <Content Include="Views\Question\Index.cshtml" />
+    <Content Include="Views\Question\_InsertQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

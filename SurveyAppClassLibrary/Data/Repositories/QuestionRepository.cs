@@ -21,6 +21,6 @@ namespace SurveyAppClassLibrary.Data.Repositories
             return Context.Questions.Where(q => q.Id == id).SingleOrDefault();
         }
 
-        // Insert, Delete, and Update derived from base class.
+        // Insert, Delete, and Update are inherited from base class.
     }
 }

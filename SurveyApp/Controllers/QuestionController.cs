@@ -6,15 +6,15 @@ using System.Web;
 using System.Web.Mvc;
 using SurveyAppClassLibrary.Data.Repositories;
 using SurveyAppClassLibrary.Data;
+using SurveyAppClassLibrary.Models;
 
 namespace SurveyApp.Controllers
 {
     public class QuestionController : Controller
     {
-        // GET: Question
-
         private QuestionRepository QuestionRepo = null;
         private Context _context = null;
+
         public QuestionController()
         {
             _context = new Context();
@@ -26,6 +26,14 @@ namespace SurveyApp.Controllers
             QuestionManagement questions = new QuestionManagement();
             questions.Questions = QuestionRepo.GetList();
             return View(questions);
+        }
+
+        [HttpPost]
+        public ActionResult InsertQuestion(Question question)
+        {
+            QuestionRepo.Insert(question);
+
+            return View("Index");
         }
     }
 }

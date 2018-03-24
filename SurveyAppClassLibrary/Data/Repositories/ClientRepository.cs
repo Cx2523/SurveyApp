@@ -9,7 +9,6 @@ using SurveyAppClassLibrary.Models;
 
 namespace SurveyAppClassLibrary.Data.Repositories
 {
-
     public class ClientRepository : IClientRepository
     {
         private Context _context = null;
