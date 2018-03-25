@@ -31,8 +31,7 @@ namespace SurveyApp.Controllers
         [HttpPost]
         public ActionResult InsertQuestion(Question question)
         {
-            QuestionRepo.Insert(question);
-
+            QuestionRepo.Insert(question);  
             return View("Index");
         }
     }

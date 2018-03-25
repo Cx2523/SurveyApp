@@ -7,20 +7,45 @@ using System.Threading.Tasks;
 
 namespace SurveyAppClassLibrary.Data.Repositories
 {
-    public class QuestionRepository : BaseRepository<Question>
+    public class QuestionRepository : IQuestionRepository
     {
-        public QuestionRepository(Context context) : base(context) {}
-
-        public override IList<Question> GetList()
+        private Context _context = null;
+        public QuestionRepository(Context context)
         {
-            return Context.Questions
+            _context = context;
+        }
+
+        public IEnumerable<Question> GetQuestions(int id)
+        {
+            return _context.Questions
+                .Where(question => question.Creator.Id == id)
+                .Include(question => question.Surveys)
+                .Include(question => question.Creator)
                 .ToList();
         }
-        public override Question Get(int id)
+
+        public Question GetQuestionById(int id)
         {
-            return Context.Questions.Where(q => q.Id == id).SingleOrDefault();
+            var query = from c in _context.Questions where c.Id == id select c;
+            return query.Single();
         }
 
-        // Insert, Delete, and Update are inherited from base class.
+        public void InsertQuestion(Question question, int UserId)
+        {
+            _context.Users.Find(UserId).Questions.Add(question);
+        }
+
+        public void UpdateQuestion(Question question) { }
+
+        public void DeleteQuestion(int QuestionId)
+        {
+            Question question = _context.Questions.Where(c => c.Id == QuestionId).SingleOrDefault();
+            _context.Questions.Remove(question);
+        }
+
+        public void Save()
+        {
+            _context.SaveChanges();
+        }
     }
 }

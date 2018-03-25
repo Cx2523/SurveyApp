@@ -22,6 +22,7 @@ namespace SurveyAppClassLibrary.Data.Repositories
         //INsert(entity)
         public void Insert(TEntity entity)
         {
+
             Context.Set<TEntity>().Add(entity);
             Context.SaveChanges();
         }
