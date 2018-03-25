@@ -24,14 +24,14 @@ namespace SurveyApp.Controllers
         public ActionResult Index()
         {
             QuestionManagement questions = new QuestionManagement();
-            questions.Questions = QuestionRepo.GetList();
+            questions.Questions = QuestionRepo.GetQuestions((int)Session["UserId"]).ToList();
             return View(questions);
         }
 
         [HttpPost]
         public ActionResult InsertQuestion(Question question)
         {
-            QuestionRepo.Insert(question);  
+            QuestionRepo.InsertQuestion(question, (int)Session["UserId"]);  
             return View("Index");
         }
     }
