@@ -23,7 +23,7 @@
                 <td>@question.CreationDate</td>
                 <td>@question.QuestionText</td>
                 <td><a href="" class="btn btn-warning btn-md margin-right">Edit</a></td>
-                <td>@*<a href="@Url.Action("DeleteClient", "Client", new { clientID = client.Id } )" class="btn btn-danger btn-md margin-right">Delete</a>*@</td>
+                <td><a href="@Url.Action("DeleteQuestion", "Question", new { questionID = question.Id } )" class="btn btn-danger btn-md margin-right">Delete</a></td>
 
             </tr>
         }

@@ -31,8 +31,18 @@ namespace SurveyApp.Controllers
         [HttpPost]
         public ActionResult InsertQuestion(Question question)
         {
-            QuestionRepo.InsertQuestion(question, (int)Session["UserId"]);  
-            return View("Index");
+            QuestionRepo.InsertQuestion(question, (int)Session["UserId"]);
+            QuestionRepo.Save();
+            return RedirectToAction("Index");
+        } 
+
+        public ActionResult DeleteQuestion(int id)
+        {
+            QuestionRepo.DeleteQuestion(id);
+            QuestionRepo.Save();
+            return RedirectToAction("Index");
         }
+
+
     }
 }

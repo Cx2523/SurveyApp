@@ -42,6 +42,7 @@ namespace SurveyAppClassLibrary.Data.Repositories
         {
             Question question = _context.Questions.Where(c => c.Id == QuestionId).SingleOrDefault();
             _context.Questions.Remove(question);
+
         }
 
         public void Save()
