@@ -36,9 +36,10 @@ namespace SurveyApp.Controllers
             return RedirectToAction("Index");
         } 
 
-        public ActionResult DeleteQuestion(int id)
+        public ActionResult DeleteQuestion()
         {
-            QuestionRepo.DeleteQuestion(id);
+
+            QuestionRepo.DeleteQuestion(Int32.Parse(Request.QueryString["questionID"]));
             QuestionRepo.Save();
             return RedirectToAction("Index");
         }

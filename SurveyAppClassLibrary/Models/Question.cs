@@ -12,6 +12,7 @@ namespace SurveyAppClassLibrary.Models
         public Question()
         {
             Surveys = new List<Survey> { };
+            CreationDate = DateTime.Today;
         }
         public int Id { get; set; }
         public User Creator { get; set; }
