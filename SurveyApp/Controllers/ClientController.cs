@@ -36,5 +36,20 @@ namespace SurveyApp.Controllers
             unitOfWork.Save();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public void EditClient()
+        {
+            //shouldn't need to gao back to the database
+            Client clientToEdit = unitOfWork.ClientRepository.GetClientById(Int32.Parse(Request.QueryString["clientID"]));
+            ViewBag.clientToEdit = clientToEdit;
+        }
+
+        [HttpPost]
+        public ActionResult EditClient(Client client)
+        {
+
+            return RedirectToAction("Index");
+        }
     }
 }

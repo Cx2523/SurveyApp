@@ -29,7 +29,7 @@
             <td>@client.ZipCode</td>
             <td>@client.Surveys</td>
             <td>@client.Owner.Username</td>
-            <td><a href="" class="btn btn-warning btn-md margin-right">Edit</a></td>
+            <td><a href="@Url.Action("EditClient", "Client", new { clientID = client.Id } )" class="btn btn-warning btn-md margin-right">Edit</a></td>
             <td><a href="@Url.Action("DeleteClient", "Client", new { clientID = client.Id } )" class="btn btn-danger btn-md margin-right">Delete</a></td>
             
         </tr>
