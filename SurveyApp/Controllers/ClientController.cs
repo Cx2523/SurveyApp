@@ -38,10 +38,12 @@ namespace SurveyApp.Controllers
         }
 
         [HttpGet]
-        public void EditClient()
+        public ActionResult EditClient()
         {
-            //shouldn't need to gao back to the database
-            ViewData["clientToEdit"] = unitOfWork.ClientRepository.GetClientById(Int32.Parse(Request.QueryString["clientID"])); ;
+            Client clientToEdit = unitOfWork.ClientRepository.GetClientById(
+                Int32.Parse(Request.QueryString["clientID"])
+                );
+            return View(clientToEdit);
         }
 
         [HttpPost]

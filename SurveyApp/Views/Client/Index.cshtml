@@ -29,10 +29,16 @@
             <td>@client.ZipCode</td>
             <td>@client.Surveys</td>
             <td>@client.Owner.Username</td>
-            <td><button onclick=@{ViewContext.ViewData= client; } class="btn btn-warning btn-md margin-right">Edit</button></td>
+            <td><a href="@Url.Action("EditClient", "Client", new { clientID = client.Id } )" class="btn btn-warning btn-md margin-right">Delete</a></td>
             <td><a href="@Url.Action("DeleteClient", "Client", new { clientID = client.Id } )" class="btn btn-danger btn-md margin-right">Delete</a></td>
             
         </tr>
         }
     </tbody>
 </table>
+<script>
+    function updateFormForEdit() {
+        console.log("test");
+        document.getElementById("firstName").value = client.FirstName;
+    }
+</script>

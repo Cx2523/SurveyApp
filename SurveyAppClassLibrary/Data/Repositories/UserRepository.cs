@@ -32,7 +32,7 @@ namespace SurveyAppClassLibrary.Data.Repositories
                 .Include(user => user.Clients)
                 .Include(user => user.Questions)
                 .Include(user => user.Surveys)
-                .Single();
+                .SingleOrDefault();
         }
 
         public void InsertUser(User user)
